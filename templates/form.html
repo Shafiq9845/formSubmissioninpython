@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Work Form</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 10px;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+            top: 300px;
+            margin-bottom: 100px;
+        }
+
+        .form-container h1 {
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            text-align: left;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        input, select, textarea {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+            width: 100%;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #007BFF;
+            outline: none;
+            box-shadow: 0 0 3px rgba(0, 123, 255, 0.5);
+        }
+
+        textarea {
+            resize: none;
+            height: 80px;
+        }
+
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            font-weight: bold;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+        
+            button {
+                padding:15px;
+                font-size: 18px;
+            }
+
+            input, select, textarea {
+                font-size: 12px;
+                width: 90%;
+
+            }
+
+            .form-container {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            max-width: 300px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            top: 300px;
+        }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Employee Work Form</h1>
+        <form action="/submit" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="checkin">Check-in Time:</label>
+            <input type="time" id="checkin" name="checkin" required>
+
+            <label for="checkout">Check-out Time:</label>
+            <input type="time" id="checkout" name="checkout" required>
+
+            <label for="task">Task Performed:</label>
+            <select id="task" name="task">
+                <option value="" disabled selected>Select an option</option>
+                <option value="Work from Home">Work from Home</option>
+                <option value="Exam Duty">Exam Duty</option>
+                <option value="Leave">Leave</option>
+                <option value="Half Day Leave">Half Day Leave</option>
+                <option value="Early Leaving">Early Leaving</option>
+                <option value="Late Coming">Late Coming</option>
+            </select>
+
+            <label for="work_report">Work Report:</label>
+            <textarea id="work_report" name="work_report" placeholder="Describe your work for the day..." required></textarea>
+
+            <label for="remarks">Remarks:</label>
+            <textarea id="remarks" name="remarks" placeholder="Any additional comments..."></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+        <div class="footer">
+            <p>Abhimo Technologies private limited</p>
+        </div>
+    </div>
+</body>
+</html>
